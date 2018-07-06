@@ -36,14 +36,19 @@ public class MainController {
 
   @GetMapping("/upvote/{id}")
   public String upVotePost(@PathVariable(value = "id")Long id) {
-
-    return "redirect:";
+    postService.modifyLike(id, 1);
+    return "redirect:/";
   }
 
   @GetMapping("/downvote/{id}")
   public String downVotePost(@PathVariable(value = "id")Long id) {
-
-    return "redirect:";
+    postService.modifyLike(id, -1);
+    return "redirect:/";
   }
 
+  @GetMapping("/post/{id}")
+  public String showPost(@PathVariable(value = "id")long id, Model model) {
+   model.addAttribute("post", postService.findOneById(id));
+    return "post";
+  }
 }

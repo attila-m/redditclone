@@ -21,4 +21,16 @@ public class PostServiceImpl implements PostService {
   public void submitPost(Post post) {
     postRepository.save(post);
   }
+
+  @Override
+  public Post findOneById(long id) {
+    return postRepository.findById(id).get();
+  }
+
+  @Override
+  public void modifyLike(long id, int modifyBy) {
+    Post post = postRepository.findById(id).get();
+    post.setLikes(post.getLikes()+modifyBy);
+    postRepository.save(post);
+  }
 }

@@ -15,20 +15,23 @@ public class Post {
   String title;
   String url;
   int likes;
+  String text;
 
   public Post() {
   }
 
-  public Post(String title, String url) {
+  public Post(String title, String url, String text) {
     this.title = title;
     this.url = url;
     this.likes = 0;
+    this.text = text;
   }
 
-  public Post(String title, String url, int likes) {
+  public Post(String title, String url, int likes, String text) {
     this.title = title;
     this.url = url;
     this.likes = likes;
+    this.text = text;
   }
 
   public long getId() {
@@ -61,5 +64,13 @@ public class Post {
 
   public void setLikes(int likes) {
     this.likes = likes;
+  }
+
+  public String getText() {
+    return text;
+  }
+
+  public void setText(String text) {
+    this.text = text;
   }
 }
