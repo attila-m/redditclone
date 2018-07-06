@@ -34,4 +34,16 @@ public class MainController {
     return "redirect:";
   }
 
+  @GetMapping("/upvote/{id}")
+  public String upVotePost(@PathVariable(value = "id")Long id) {
+
+    return "redirect:";
+  }
+
+  @GetMapping("/downvote/{id}")
+  public String downVotePost(@PathVariable(value = "id")Long id) {
+
+    return "redirect:";
+  }
+
 }

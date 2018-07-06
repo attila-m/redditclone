@@ -6,20 +6,17 @@
         <link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
     </head>
     <body>
-        <a href="submit">Submit new post</a>
-        <h1>Welcome to RedditClone!</h1>
         <div class="container">
             <div class="col-sm-1"></div>
             <div class="col-sm-10">
+                <h1 class="text-center btn-info">Welcome to RedditClone!</h1><br>
+                <a class="text-left btn-default" href="submit">Submit new post</a>
+                <h2>Trending posts</h2>
                 <table class="table">
                     <tr th:each="post : ${posts}">
                         <td th:text="${post.getLikes()}"></td>
-                        <form>
-                            <td><input type="submit" name="+" value="+"></td>
-                        </form>
-                        <form>
-                            <td><input type="submit" name="-" value="-"></td>
-                        </form>
+                            <td><a th:href="/upvote/${post.getId()}"><p class="glyphicon glyphicon-arrow-up"></p></a></td>
+                            <td><a th:href="/downvote/${post.getId()}"><p class="glyphicon glyphicon-arrow-down"></p></a></td>
                         <td><a th:href="${post.getUrl()}"><p th:text="${post.getTitle()}"></p></a></td>
                     </tr>
                 </table>

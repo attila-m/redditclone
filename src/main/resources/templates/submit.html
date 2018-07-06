@@ -7,12 +7,26 @@
 
     </head>
     <body>
-        <h1>Submit a new post</h1><br>
-        <form action="#" th:action="@{/submit}" method="post" th:object="${newPost}">
-            <input type="text" value="Add title" th:field="*{title}"><br>
-            <input type="text" value="Insert url" th:field="*{url}"><br>
-            <input type="submit" value="Submit">
-        </form>
+        <h1 class="btn-info text-center">Submit a new post</h1><br>
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8 container">
+            <table>
+                <form action="#" th:action="@{/submit}" method="post" th:object="${newPost}">
+                <tr>
+                    <td><label for="title">Add title </label></td>
+                    <td><input id="title" type="text" th:field="*{title}"><br></td>
+                </tr>
+                <tr>
+                    <td><label for="url">Insert url </label></td>
+                    <td><input id="url" type="text" th:field="*{url}"><br></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+                </form>
+            </table>
+        </div>
+        <div class="col-xs-2"></div>
     </body>
     <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
     <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
