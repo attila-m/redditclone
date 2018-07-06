@@ -14,9 +14,13 @@ public class MainController {
 
   @GetMapping("")
   public String showMainPage(Model model) {
+    model.addAttribute("posts", postService.showAllPosts());
     return "index";
   }
 
-
-
+  @GetMapping("/submit")
+  public String showSubmitPage(Model model) {
+    model.addAttribute(postService.showAllPosts());
+    return "index";
+  }
 }

@@ -13,15 +13,21 @@ public class Post {
   @GeneratedValue(strategy = GenerationType.AUTO)
   long id;
   String title;
-  String link;
+  String url;
   int likes;
 
   public Post() {
   }
 
-  public Post(String title, String link, int likes) {
+  public Post(String title, String url) {
     this.title = title;
-    this.link = link;
+    this.url = url;
+    this.likes = 0;
+  }
+
+  public Post(String title, String url, int likes) {
+    this.title = title;
+    this.url = url;
     this.likes = likes;
   }
 
@@ -41,12 +47,12 @@ public class Post {
     this.title = title;
   }
 
-  public String getLink() {
-    return link;
+  public String getUrl() {
+    return url;
   }
 
-  public void setLink(String link) {
-    this.link = link;
+  public void setUrl(String url) {
+    this.url = url;
   }
 
   public int getLikes() {
