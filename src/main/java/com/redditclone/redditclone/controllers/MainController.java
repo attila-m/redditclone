@@ -1,5 +1,6 @@
 package com.redditclone.redditclone.controllers;
 
+import com.redditclone.redditclone.models.Post;
 import com.redditclone.redditclone.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,7 +21,7 @@ public class MainController {
 
   @GetMapping("/submit")
   public String showSubmitPage(Model model) {
-    model.addAttribute(postService.showAllPosts());
-    return "index";
+    model.addAttribute("newPost", new Post());
+    return "submit";
   }
 }
