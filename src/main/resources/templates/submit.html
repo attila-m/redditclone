@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Submit Post</title>
-</head>
-<body>
-<h1>Submit a new post</h1><br>
-<form>
-    <input type="text" value="Add title" name="title"><br>
-    <input type="text" value="Insert url" name="url"><br>
-    <input type="submit" value="Submit">
-</form>
-</body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Submit Post</title>
+        <link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+
+    </head>
+    <body>
+        <h1>Submit a new post</h1><br>
+        <form action="#" th:action="@{/submit}" method="post" th:object="${newPost}">
+            <input type="text" value="Add title" th:field="*{title}"><br>
+            <input type="text" value="Insert url" th:field="*{url}"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+    <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+    <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </html>

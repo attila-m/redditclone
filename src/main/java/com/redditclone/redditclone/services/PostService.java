@@ -6,5 +6,5 @@ import com.redditclone.redditclone.models.Post;
 public interface PostService {
 
   Iterable<Post> showAllPosts();
-  void submitPost(String title, String url);
+  void submitPost(Post post);
 }

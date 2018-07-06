@@ -20,8 +20,7 @@
                         <form>
                             <td><input type="submit" name="-" value="-"></td>
                         </form>
-                        <td><input type="submit"></td>
-                        <td><a th:href="${post.getUrl()}"></a></td>
+                        <td><a th:href="${post.getUrl()}"><p th:text="${post.getTitle()}"></p></a></td>
                     </tr>
                 </table>
             </div>
